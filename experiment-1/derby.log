@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Wed Oct 05 23:30:14 CEST 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0183-aa0e-6729-00000ed018e0 
-on database directory C:\db\simpleDbTest with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Wed Oct 05 23:37:10 CEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0183-aa14-c245-00000ed18210 
+on database directory C:\scratch\expass2\db\simpleDbTest with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
 Loaded from file:/C:/Users/Andreas%20Valen/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=18.0.2.1+1-1
