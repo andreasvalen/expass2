@@ -7,29 +7,44 @@ public class CreditCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private Integer number;
+    private Integer balance;
+    private Integer limit;
+    private Pincode pincode;
+    private Bank owningBank;
+    
     public Integer getNumber() {
-        // TODO: implement method!
-        return null;
-    }
+		return number;
+	}
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+	public Integer getBalance() {
+		return balance;
+	}
+	public void setBalance(Integer balance) {
+		this.balance = balance;
+	}
+	public Integer getLimit() {
+		return limit;
+	}
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+	}
+	public Bank getOwningBank() {
+		return owningBank;
+	}
+	public void setOwningBank(Bank owningBank) {
+		this.owningBank = owningBank;
+	}
+	public Pincode getPincode() {
+		return pincode;
+	}
+	public void setPincode(Pincode pincode) {
+		this.pincode = pincode;
+	}
 
-    public Integer getBalance() {
-        // TODO: implement method!
-        return null;
-    }
 
-    public Integer getLimit() {
-        // TODO: implement method!
-        return null;
-    }
 
-    public Pincode getPincode() {
-        // TODO: implement method!
-        return null;
-    }
 
-    public Bank getOwningBank() {
-        // TODO: implement method!
-        return null;
-    }
 }
