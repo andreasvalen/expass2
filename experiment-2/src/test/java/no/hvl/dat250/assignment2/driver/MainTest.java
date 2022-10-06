@@ -36,6 +36,7 @@ public class MainTest {
 
         // Load person
         Person person = em.find(Person.class, 1L);
+        Address test_address = em.find(Address.class, 1L);
 
         // Test person data
         assertThat(person.getName(), is("Max Mustermann"));

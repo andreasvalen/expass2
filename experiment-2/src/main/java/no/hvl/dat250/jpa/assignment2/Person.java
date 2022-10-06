@@ -1,7 +1,10 @@
 package no.hvl.dat250.jpa.assignment2;
 
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Person {
@@ -9,8 +12,15 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Collection<Address> addresses;
-    private Collection<CreditCard> creditCards;
+    
+    @ManyToMany
+	@JoinTable(
+	    	name = "person_Adress_mtm2"/*
+	    	joinColumns = @JoinColumn(name = "person_id"), 
+	    	inverseJoinColumns = @JoinColumn(name = "address_id")*/)
+    private List<Address> addresses = new ArrayList<Address>();
+    
+    private List<CreditCard> creditCards;
 
 	public String getName() {
 		return name;
@@ -26,9 +36,10 @@ public class Person {
 		return addresses;
 	}
 
-
-	public void setAddresses(Collection<Address> addresses) {
-		this.addresses = addresses;
+	
+	public void setAddress(Address address) {
+		this.addresses.add(address);
+		address.setOwners(this);
 	}
 
 
@@ -37,7 +48,7 @@ public class Person {
 	}
 
 
-	public void setCreditCards(Collection<CreditCard> creditCards) {
+	public void setCreditCards(List<CreditCard> creditCards) {
 		this.creditCards = creditCards;
 	}
 

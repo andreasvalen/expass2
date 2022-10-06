@@ -1,6 +1,8 @@
 package no.hvl.dat250.jpa.assignment2;
 
 import javax.persistence.*;
+
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -9,7 +11,9 @@ public class Bank {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Set<CreditCard> ownedCards;
+    
+    @OneToMany(mappedBy="owningBank", cascade = CascadeType.ALL)
+    private Set<CreditCard> ownedCards = new HashSet<CreditCard>();
     
 	public Long getId() {
 		return id;
@@ -24,8 +28,8 @@ public class Bank {
 	public Set<CreditCard> getOwnedCards() {
 		return ownedCards;
 	}
-	public void setOwnedCards(Set<CreditCard> ownedCards) {
-		this.ownedCards = ownedCards;
+	public void setOwnedCards(CreditCard card) {
+		this.ownedCards.add(card);
 	}
 
 }

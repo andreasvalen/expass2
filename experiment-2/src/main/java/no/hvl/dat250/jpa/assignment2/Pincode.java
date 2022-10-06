@@ -1,5 +1,8 @@
 package no.hvl.dat250.jpa.assignment2;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity

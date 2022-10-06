@@ -10,7 +10,10 @@ public class CreditCard {
     private Integer number;
     private Integer balance;
     private Integer limit;
+    
     private Pincode pincode;
+    
+    @ManyToOne(targetEntity = Bank.class)
     private Bank owningBank;
     
     public Integer getNumber() {
@@ -36,6 +39,7 @@ public class CreditCard {
 	}
 	public void setOwningBank(Bank owningBank) {
 		this.owningBank = owningBank;
+		owningBank.setOwnedCards(this);
 	}
 	public Pincode getPincode() {
 		return pincode;
